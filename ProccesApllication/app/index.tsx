@@ -5,9 +5,9 @@ import LoginForm from "@/components/login-form";
 
 export default function Home() {
   return (
-    <View className="flex-1 bg-gray-900 ">
+    <View className="flex-1 bg-black ">
         <View className="mt-20 justify-center items-center">
-            <Text className="p-5 text-white font-bold text-2xl"> Realizar Login</Text>
+            <Text className="p-5  border-b-2 border-white text-white font-bold text-2xl"> Realizar Login</Text>
         </View>
 
        <LoginForm>
