@@ -52,7 +52,7 @@ app.post("/login", async (req, res) => {
         {email: req.body.email},
         {password: req.body.password}
       ]}})
-      res.status(201).json({message: "Login feito com sucesso", data: login})
+      res.status(200).json({message: "Login feito com sucesso", data: login})
     }
     catch(e: unknown) {
         res.status(401).json({error: (e as Error).message, message: "Não autorizado"})
@@ -62,10 +62,10 @@ app.post("/login", async (req, res) => {
 //  task
 
 
-app.post("/task", async (req, res) => {
+app.post("/post", async (req, res) => {
   try {
-      const user = await prisma.task.create({data: req.body})
-      res.status(201).json({message: "Task criada com sucesso", data: user})
+      const user = await prisma.post.create({data: req.body})
+      res.status(201).json({message: "Post criado com sucesso", data: user})
     }
     catch(e: unknown) {
         console.log(e)

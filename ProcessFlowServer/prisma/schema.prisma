@@ -20,14 +20,17 @@ model User {
   name String
   email String @unique
   password String
-  tasks Task[]
+  posts Post[]
+  bio String @default("Bio padrão para preencher espaço da bio")
 }
 
-model Task {
-  id_task String @id @default(uuid()) 
+model  Post {
+  id_post String @id @default(uuid()) 
   id_user String 
   user User @relation(fields: [id_user], references: [id_user])
-  name String
-  description String
-  isComplete Boolean @default(false)
+  title String
+  content String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt @default(now())
+  
 }
